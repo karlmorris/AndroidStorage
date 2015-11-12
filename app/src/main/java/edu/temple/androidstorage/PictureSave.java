@@ -52,9 +52,10 @@ public class PictureSave extends Activity {
                 + directoryName);
 
         File[] files = storageDirectory.listFiles();
-        for (File file : files) {
-            addPicture(Uri.fromFile(file));
-        }
+        if (files != null)
+            for (File file : files) {
+                addPicture(Uri.fromFile(file));
+            }
 
     }
 
@@ -82,7 +83,7 @@ public class PictureSave extends Activity {
             takePicture();
             return true;
         } else if (item.getItemId() == R.id.action_next) {
-            startActivity(new Intent(this, DBSave.class));
+           // startActivity(new Intent(this, DBSave.class));
             return true;
         }
 
