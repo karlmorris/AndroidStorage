@@ -1,0 +1,7 @@
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    tools:context="edu.temple.androidstorage.PictureSave">
+    <item android:id="@+id/action_pic" android:title="New Pic"
+        android:orderInCategory="100" android:showAsAction="always"
+        android:icon="@android:drawable/ic_menu_camera"/>
+</menu>
