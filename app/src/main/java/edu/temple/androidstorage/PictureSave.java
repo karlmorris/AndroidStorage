@@ -81,6 +81,9 @@ public class PictureSave extends Activity {
         if (id == R.id.action_pic) {
             takePicture();
             return true;
+        } else if (item.getItemId() == R.id.action_next) {
+            startActivity(new Intent(this, DBSave.class));
+            return true;
         }
 
         return super.onOptionsItemSelected(item);
