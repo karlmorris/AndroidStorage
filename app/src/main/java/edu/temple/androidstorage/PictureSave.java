@@ -83,7 +83,7 @@ public class PictureSave extends Activity {
             takePicture();
             return true;
         } else if (item.getItemId() == R.id.action_next) {
-           // startActivity(new Intent(this, DBSave.class));
+            startActivity(new Intent(this, DBSave.class));
             return true;
         }
 
