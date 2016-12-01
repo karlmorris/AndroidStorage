@@ -53,7 +53,8 @@ public class DBSave extends Activity {
 
                         try {
 
-                            stockQuoteUrl = new URL("http://finance.yahoo.com/webservice/v1/symbols/" + stockSymbol + "/quote?format=json");
+                            //stockQuoteUrl = new URL("http://finance.yahoo.com/webservice/v1/symbols/" + stockSymbol + "/quote?format=json");
+                            stockQuoteUrl = new URL("http://dev.markitondemand.com/MODApis/Api/v2/Quote/json?symbol=" + stockSymbol);
 
                             BufferedReader reader = new BufferedReader(
                                     new InputStreamReader(
@@ -91,11 +92,7 @@ public class DBSave extends Activity {
             JSONObject responseObject = (JSONObject) msg.obj;
 
             try {
-                Stock stock = new Stock(responseObject.getJSONObject("list")
-                        .getJSONArray("resources")
-                        .getJSONObject(0)
-                        .getJSONObject("resource")
-                        .getJSONObject("fields"));
+                Stock stock = new Stock(responseObject);
 
                 saveData(stock.getSymbol(), stock.getName(), stock.getPrice());
             } catch (Exception e) {

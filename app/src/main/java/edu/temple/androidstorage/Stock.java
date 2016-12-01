@@ -17,7 +17,7 @@ public class Stock {
     }
 
     public Stock (JSONObject stockObject) throws JSONException{
-        this(stockObject.getString("name"), stockObject.getString("symbol"), stockObject.getDouble("price"));
+        this(stockObject.getString("Name"), stockObject.getString("Symbol"), stockObject.getDouble("LastPrice"));
     }
 
     public String getName() {
