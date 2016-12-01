@@ -31,7 +31,7 @@ public class PictureSave extends Activity {
 
     private static int TAKE_PICTURE_REQUEST_CODE = 11111;
 
-    private static String directoryName = "androidStorage";
+    private static String directoryName = "androidStorageApp";
     File storageDirectory;
 
     @Override
@@ -48,8 +48,9 @@ public class PictureSave extends Activity {
         storageDirectory = new File(Environment.getExternalStorageDirectory()
                 + File.separator
                 + Environment.DIRECTORY_PICTURES
-                + File.separator
-                + directoryName);
+                , directoryName);
+        storageDirectory.mkdir();
+        Log.d("Storage directory", storageDirectory.getAbsolutePath());
 
         File[] files = storageDirectory.listFiles();
         if (files != null)
