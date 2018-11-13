@@ -1,11 +1,9 @@
 package edu.temple.androidstorage;
 
 import android.app.Activity;
-import android.content.Context;
 import android.content.Intent;
 import android.content.SharedPreferences;
 import android.os.Bundle;
-import android.os.Environment;
 import android.text.Editable;
 import android.text.TextWatcher;
 import android.view.Menu;
@@ -74,7 +72,7 @@ public class MainActivity extends Activity {
                 // Update shared preferences when toggled
                 SharedPreferences.Editor editor = preferences.edit();
                 editor.putBoolean("autoSave", autoSave);
-                editor.commit();
+                editor.apply();
             }
         });
 
